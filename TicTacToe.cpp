@@ -19,6 +19,11 @@ vector<vector<string>> CreateBoard() {
     return emptyBoard;
 }
 
+/**
+ * @brief print board to stdout
+ * 
+ * @param board 2d vector of strings to print
+ */
 void DisplayBoard(vector<vector<string>> board) {
     for (int i = 0; i < board.size(); i++) {
         vector<string> row = board[i];
