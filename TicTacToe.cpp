@@ -11,33 +11,44 @@ using namespace std;
  */
 vector<vector<string>> CreateBoard() {
     vector<vector<string>> emptyBoard {
-        {" ", " ", " "},
-        {" ", " ", " "},
-        {" ", " ", " "}
+        {"1", "2", "3"},
+        {"4", "5", "6"},
+        {"7", "8", "9"}
     };
 
     return emptyBoard;
 }
 
-void DisplayBoard(vector<vector<string>> board){
-    
-    int lineCount = 0;
-    
-    //traverse 2D vect
-    for(int x = 0; x < 3; x++){
+/**
+ * @brief print board to stdout
+ * 
+ * @param board 2d vector of strings to print
+ */
+void DisplayBoard(vector<vector<string>> board) {
+    for (int i = 0; i < board.size(); i++) {
+        vector<string> row = board[i];
 
-        for(int y = 0; y < 3; y++){
-            //print x/o/" "
-            cout<<board[x][y];
-        
+        // make sure the row has 3 items, otherwise this isn't tic tac toe o.O
+        if (row.size() != 3) {
+            cout << "Error: board size incorrect" << endl;
+            return;
         }
-        
-        //reset linecount
-        lineCount = 0;
-        cout<<endl;
+
+        cout << row[0] << "|" << row[1] << "|" << row[2] << endl;
+
+        if (i != board.size() - 1) {
+            // print separater after every row except last row
+            cout << "-+-+-" << endl;
+        }
     }
+}
+
+int GetPlayerChoice(){
+    string ans = "";
+    cout<<"What space would you like to play?"<<endl;
+    cin>>ans;
     
-    
+    return ans;
 }
 
 int main() {
