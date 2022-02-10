@@ -20,8 +20,7 @@ vector<vector<string>> CreateBoard() {
 }
 
 void DisplayBoard(vector<vector<string>> board) {
-    int i;
-    for (i = 0; i < board.size(); i++) {
+    for (int i = 0; i < board.size(); i++) {
         vector<string> row = board[i];
 
         // make sure the row has 3 items, otherwise this isn't tic tac toe o.O
@@ -41,4 +40,5 @@ void DisplayBoard(vector<vector<string>> board) {
 
 int main() {
     vector<vector<string>> board = CreateBoard();
+    DisplayBoard(board);
 }
