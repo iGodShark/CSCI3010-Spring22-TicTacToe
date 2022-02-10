@@ -57,6 +57,14 @@ void DisplayBoard(vector<vector<string>> board) {
     }
 }
 
+int GetPlayerChoice(){
+    string ans = "";
+    cout<<"What space would you like to play?"<<endl;
+    cin>>ans;
+    
+    return ans;
+}
+
 int main() {
     vector<vector<string>> board = CreateBoard();
     DisplayBoard(board);
