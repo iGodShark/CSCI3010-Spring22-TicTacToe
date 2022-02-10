@@ -59,13 +59,26 @@ void DisplayBoard(vector<vector<string>> board) {
 
 int GetPlayerChoice(){
     string ans = "";
-    cout<<"What space would you like to play?"<<endl;
-    cin>>ans;
+    cout << "What space would you like to play?"<<endl;
+    cin >> ans;
     
-    return ans;
+    return stoi(ans);
 }
 
 int main() {
     vector<vector<string>> board = CreateBoard();
+    string currentPlayer = "O";
+
+    for (int i = 0; i < 9; i++) {
+        // 9 turns
+        DisplayBoard(board);
+        cout << "Player " << currentPlayer << " turn." << endl;
+        int position = GetPlayerChoice();
+        PlaceMarker(position, currentPlayer, board);
+
+        // next player
+        currentPlayer = (currentPlayer.compare("O") ? "O" : "X");
+    }
+
     DisplayBoard(board);
 }
