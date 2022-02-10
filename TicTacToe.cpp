@@ -11,12 +11,26 @@ using namespace std;
  */
 vector<vector<string>> CreateBoard() {
     vector<vector<string>> emptyBoard {
-        {" ", " ", " "},
-        {" ", " ", " "},
-        {" ", " ", " "}
+        {"1", "2", "3"},
+        {"4", "5", "6"},
+        {"7", "8", "9"}
     };
 
     return emptyBoard;
+}
+
+/**
+ * @brief updates marker at location in board
+ * 
+ * @param location location where to place marker
+ * @param marker x or o
+ * @param board reference to 2d vector of strings (board)
+ */
+void PlaceMarker(int location, string marker, vector<vector<string>> & board) {
+    int row = (location - 1) / 3;
+    int col = (location - 1) % 3;
+
+    board[row][col] = marker;
 }
 
 /**
