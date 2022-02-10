@@ -20,6 +20,20 @@ vector<vector<string>> CreateBoard() {
 }
 
 /**
+ * @brief updates marker at location in board
+ * 
+ * @param location location where to place marker
+ * @param marker x or o
+ * @param board reference to 2d vector of strings (board)
+ */
+void PlaceMarker(int location, string marker, vector<vector<string>> & board) {
+    int row = (location - 1) / 3;
+    int col = (location - 1) % 3;
+
+    board[row][col] = marker;
+}
+
+/**
  * @brief print board to stdout
  * 
  * @param board 2d vector of strings to print
